@@ -1,0 +1,167 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px 35px 15px;
+  font-size: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 15px;
+  margin: 10px 10px;
+}
+
+.usuario>img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.usuario>.nombre {
+  text-align: center;
+  color: #fb5064;
+}
+
+.contenedor-usuarios {
+  background-color: #f5f8f9;
+  padding: 10px 0;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.contenedor-usuarios h3 {
+  text-align: center;
+  color: #fb5064;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.opcion-boton {
+  color: #dadfe1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+.opciones {
+  display: flex;
+  background-color: #f1f4f5;
+  border-radius: 30px;
+  gap: 15px;
+  width: 135px;
+}
+
+.opcion-boton.seleccionado {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+}
+
+.opcion-boton.seleccionado .fa-fire-flame-curved{
+  color: #fb5064
+}
+
+.opcion-boton.seleccionado .fa-star {
+  color: #dbd524;
+}
+
+.opcion-boton.seleccionado .fa-user {
+  color: #76cdff;
+}
+
+#seccion-1, #seccion-2 {
+  display: none;
+}
+
+#imagen-perfil {
+  background-image: url(../img/cover-pics/bulma.jpg);
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#informacion-perfil {
+  background-color: #00000082;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 15px;
+  flex: 1;
+}
+
+#informacion-basica {
+  display: flex;
+  align-items: center;
+}
+
+#informacion-basica h1, #informacion-basica h4 {
+  margin: 0 5px;
+}
+
+#navegacion-perfiles {
+  display: flex;
+  justify-content: space-between;
+  color: #dddee2;
+  font-size: 3rem;
+}
+
+#boton-like {
+  box-shadow: #00000036 2px 2px 18px;
+  border-radius: 100%;
+  padding: 20px;
+  color: #3ceabc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor-matches {
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.card-usuario {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+}
+#contenedor-matches h2 {
+  text-align: center;
+  color: #fb5265;
+}
+
+.card-imagen {
+  flex: 1;
+  margin-right: 10px;
+}
+.card-imagen img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-info {
+  flex: 2;
+}

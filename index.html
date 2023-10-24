@@ -1,11 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tinder</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <script src="https://kit.fontawesome.com/33c3fc8b29.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <nav>
+    <div>
+      <div class="opcion-boton seleccionado" onclick="seleccionarOpcionMenu(0, this)">
+        <i class="fa-solid fa-user"></i>
+      </div>
+    </div>
+    <div class="opciones">
+      <div class="opcion-boton" onclick="seleccionarOpcionMenu(1, this)">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="opcion-boton" onclick="seleccionarOpcionMenu(2, this)">
+        <i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+    <div></div>
+  </nav>
+  <section id="seccion-0">
+    <div class="logo">
+      <img src="assets/img/tinder-logo.png">
+    </div>
+    <div class="contenedor-usuarios">
+      <h3>Usuario Autenticado</h3>
+      <main id="usuarios">
+        <div class="usuario">
+          <img src="assets/img/profile-pics/azula.jpeg">
+          <div class="nombre">Azula</div>
+        </div>
+        <div class="usuario">
+          <img src="assets/img/profile-pics/androide_16.jpg">
+          <div class="nombre">16</div>
+        </div>
+        <div class="usuario">
+          <img src="assets/img/profile-pics/bulma.jpg">
+          <div class="nombre">Bulma</div>
+        </div>
+        <div class="usuario">
+          <img src="assets/img/profile-pics/cell.jpg">
+          <div class="nombre">Cell</div>
+        </div>
+        <div class="usuario">
+          <img src="assets/img/profile-pics/dodoria.jpg">
+          <div class="nombre">Dodoria</div>
+        </div>
+        <div class="usuario">
+          <img src="assets/img/profile-pics/freezer.jpg">
+          <div class="nombre">Freezer</div>
+        </div>
+      </main>
+    </div>
+  </section>
   
+  <!--  -->
+  <section id="seccion-1">
+    <div id="perfil">
+      <div id="imagen-perfil">
+        <div id="informacion-perfil">
+          <div id="informacion-basica">
+            <h1>Bulma</h1>
+            <h4>34</h4>
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-briefcase"></i>
+            <span>
+              Cientifica
+            </span>
+          </div>
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+              Tegucigalpa
+            </span>
+          </div>
+        </div>
+        
+      </div>
+      <nav id="navegacion-perfiles">
+        <div>
+          <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div id="boton-like">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-circle-chevron-right"></i>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <!--  -->
+
+  <!--  -->
+  <section id="seccion-2">
+    <div id="contenedor-matches">
+      <div><h2>Matches</h2></div>
+      <div>
+        <div class="card-usuario">
+          <div class="card-imagen"><img src="assets/img/profile-pics/goku.jpg"></div>
+          <div class="card-info">
+            <div id="informacion-perfil">
+              <div id="informacion-basica">
+                <h1>Bulma</h1>
+                <h4>34</h4>
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-briefcase"></i>
+                <span>
+                  Cientifica
+                </span>
+              </div>
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>
+                  Tegucigalpa
+                </span>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="card-usuario">
+          <div class="card-imagen"><img src="assets/img/profile-pics/vegeta.jpg"></div>
+          <div class="card-info">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  -->
+  <script src="assets/js/controlador.js"></script>
 </body>
+
 </html>
