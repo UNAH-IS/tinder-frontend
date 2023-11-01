@@ -165,3 +165,7 @@ main {
 .card-info {
   flex: 2;
 }
+
+.usuario.seleccionado img {
+  border: 2px solid red;
+}
