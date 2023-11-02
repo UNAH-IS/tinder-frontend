@@ -1,6 +1,8 @@
 var usuarios = [];
 var idUsuarioSeleccionado; //ID
 var usuarioSeleccionado = null; //Objeto
+var perfilesDeInteres = [];
+var indicePerfilActual;
 //funcion convencional
 // function seleccionarOpcionMenu(opcion) {
 
@@ -81,10 +83,41 @@ const seleccionarUsuario = async (id, etiqueta) => {
 
   usuarioSeleccionado = await resultado.json();
   console.log('Usuario seleccionado (se obtuvo nuevamente desde el servidor)', usuarioSeleccionado);
+  
+  perfilesDeInteres = usuarios.filter(u => usuarioSeleccionado.generoInteres.includes(u.genero));
+  console.log('Perfiles de interes: ', perfilesDeInteres);
+  indicePerfilActual = 0;
+  renderizarPerfil(indicePerfilActual);
+}
+
+const renderizarPerfil = (indice) => {
+  let perfil = perfilesDeInteres[indice];
+  console.log('Perfil a renderizar', perfil);
+  console.log('Imagen:', `url(assets/img/${perfil.imagenPortada})`);
+  document.getElementById('imagen-perfil').style.backgroundImage = `url(assets/img/${perfil.imagenPortada})`;
+  document.querySelector('#informacion-basica h1').innerHTML = perfil.nombre;
+  document.querySelector('#informacion-basica h4').innerHTML = perfil.edad;
+  document.getElementById('ocupacion').innerHTML = perfil.ocupacion;
+  document.getElementById('ciudad').innerHTML = perfil.ciudad;
 }
 
 obtenerUsuarios2(); //async
 
+const renderizarSiguientePerfil = () => {
+  indicePerfilActual++;
+  if (perfilesDeInteres.length == indicePerfilActual) {
+    indicePerfilActual = 0;
+  }
+  renderizarPerfil(indicePerfilActual)
+}
+
+const renderizarPerfilAnterior = () => {
+  indicePerfilActual--;
+  if (indicePerfilActual == -1) {
+    indicePerfilActual = perfilesDeInteres.length-1;
+  }
+  renderizarPerfil(indicePerfilActual)
+}
 
 
 //Para gestionar funciones asincronas JS utilizar un objeto especial 

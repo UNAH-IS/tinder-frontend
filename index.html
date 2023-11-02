@@ -42,35 +42,36 @@
   <section id="seccion-1">
     <div id="perfil">
       <div id="imagen-perfil">
+        <!-- background-image: url(../img/cover-pics/bulma.jpg); -->
         <div id="informacion-perfil">
           <div id="informacion-basica">
-            <h1>Bulma</h1>
-            <h4>34</h4>
+            <h1></h1>
+            <h4></h4>
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <div>
             <i class="fa-solid fa-briefcase"></i>
-            <span>
-              Cientifica
+            <span id="ocupacion">
+              
             </span>
           </div>
           <div>
             <i class="fa-solid fa-location-dot"></i>
-            <span>
-              Tegucigalpa
+            <span id="ciudad">
+              
             </span>
           </div>
         </div>
         
       </div>
       <nav id="navegacion-perfiles">
-        <div>
+        <div onclick="renderizarPerfilAnterior()">
           <i class="fa-solid fa-circle-chevron-left"></i>
         </div>
         <div id="boton-like">
           <i class="fa-solid fa-heart"></i>
         </div>
-        <div>
+        <div onclick="renderizarSiguientePerfil()">
           <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
       </nav>
