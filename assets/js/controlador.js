@@ -92,6 +92,13 @@ const seleccionarUsuario = async (id, etiqueta) => {
 
 const renderizarPerfil = (indice) => {
   let perfil = perfilesDeInteres[indice];
+
+  if (usuarioSeleccionado.likes.includes(perfilesDeInteres[indice].id)) {
+    document.getElementById('boton-like').classList.add("like");
+  } else {
+    document.getElementById('boton-like').classList.remove("like");
+  }
+
   console.log('Perfil a renderizar', perfil);
   console.log('Imagen:', `url(assets/img/${perfil.imagenPortada})`);
   document.getElementById('imagen-perfil').style.backgroundImage = `url(assets/img/${perfil.imagenPortada})`;
@@ -117,6 +124,35 @@ const renderizarPerfilAnterior = () => {
     indicePerfilActual = perfilesDeInteres.length-1;
   }
   renderizarPerfil(indicePerfilActual)
+}
+
+const agregarLike = async () => {
+  ///??? Usuario autenticado
+  console.log('Al usuario '+ usuarioSeleccionado.nombre + ' le dio like al usuario ' + perfilesDeInteres[indicePerfilActual].nombre);
+  //Verificar si esta en el arreglo de likes, si está se elimina, sino se agrega.
+  if (usuarioSeleccionado.likes.includes(perfilesDeInteres[indicePerfilActual].id)) {
+    //Eliminarlo
+    let indice = usuarioSeleccionado.likes.indexOf(perfilesDeInteres[indicePerfilActual].id);
+    usuarioSeleccionado.likes.splice(indice, 1);
+    document.getElementById('boton-like').classList.remove("like");
+  } else {
+    usuarioSeleccionado.likes.push(perfilesDeInteres[indicePerfilActual].id);
+    document.getElementById('boton-like').classList.add("like");
+  }
+  // usuarioSeleccionado.likes = [...new Set(usuarioSeleccionado.likes)];
+
+
+  let resultadoActualizacion = await fetch('http://localhost:3000/users/' + usuarioSeleccionado.id, { 
+    method: 'PUT',
+    headers: {
+      "Content-Type": "application/json", 
+    },
+    body: JSON.stringify(usuarioSeleccionado)
+  });
+
+  let informacionActualizacion = await resultadoActualizacion.json();
+  
+  console.log('Respuesta del servidor luego de actualizar', informacionActualizacion);
 }
 
 

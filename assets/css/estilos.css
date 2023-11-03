@@ -168,3 +168,7 @@ main {
 .usuario.seleccionado img {
   border: 2px solid red;
 }
+
+.like {
+  color: #fb5265!important;
+}
